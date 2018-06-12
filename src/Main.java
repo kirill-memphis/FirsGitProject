@@ -26,7 +26,7 @@ public class Main {
             countScanner.close();
 
             //Проверка подсчета значений
-            System.out.println("Значений: "+intCount);
+            System.out.println("Значений в файле: "+intCount);
 
             //Инициализация массива
             Scanner scanner = new Scanner(file);
@@ -99,6 +99,27 @@ public class Main {
             System.out.println("Сортированный массив:");
             for (int l=0; l<intCount; l++)
                 System.out.print(arrBelowSort[l]+" ");
+
+
+            int mediCount = 0;
+            for (int l=0; l<intCount; l++)
+                if(arrBelowSort[l]>=0 & arrBelowSort[l]<=10)
+                    mediCount++;
+
+            int[] arrOfMedium = new int[mediCount];
+
+            int med = 0;
+            for (int l=0; l<intCount; l++) {
+                if (arrBelowSort[l] >= 0 & arrBelowSort[l] <= 10) {
+                    arrOfMedium[med] = arrBelowSort[l];
+                    med++;
+                }
+            }
+
+        System.out.println();
+        System.out.println("Массив из средней части:");
+        for (int l=0; l<mediCount; l++)
+            System.out.print(arrOfMedium[l]+" ");
 
 
         }
