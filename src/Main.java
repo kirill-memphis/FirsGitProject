@@ -37,8 +37,9 @@ public class Main {
                 arrNumber[i] = newNumber;
             }
 
+            System.out.println("Исходный массив:");
             for (int j=0; j<intCount; j++)
-                System.out.println(arrNumber[j]);
+                System.out.print(arrNumber[j]+" ");
 
             scanner.close();
 
@@ -76,9 +77,26 @@ public class Main {
                 }
             }
 
-            System.out.println("----------");
+            //Сортировка начала и конца
+            int tmp;
+            for (int i = 1; i < intCount; i++) {
+                for (int j = 1; j < intCount; j++) {
+                    if (arrBelowSort[j] < arrBelowSort[j-1] & arrBelowSort[j]<0 & arrBelowSort[j-1]<0) {
+                        tmp = arrBelowSort[j];
+                        arrBelowSort[j] = arrBelowSort[j-1];
+                        arrBelowSort[j-1] = tmp;
+                    }
 
+                    if (arrBelowSort[j] > arrBelowSort[j-1] & arrBelowSort[j]>10 & arrBelowSort[j-1]>10) {
+                        tmp = arrBelowSort[j];
+                        arrBelowSort[j] = arrBelowSort[j-1];
+                        arrBelowSort[j-1] = tmp;
+                    }
+                }
+            }
 
+            System.out.println();
+            System.out.println("Сортированный массив:");
             for (int l=0; l<intCount; l++)
                 System.out.print(arrBelowSort[l]+" ");
 
