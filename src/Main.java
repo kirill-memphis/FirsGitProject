@@ -46,23 +46,41 @@ public class Main {
             e.printStackTrace();
         }
 
-            //Сортировка отрицательных в начало
+
             int belowCounter = 0;
             int[] arrBelowSort = new int[intCount];
 
+            //Перенос отрицательных в начало
             for (int k=0; k<intCount; k++) {
 
                 if (arrNumber[k]<0){
                     arrBelowSort[belowCounter]=arrNumber[k];
                     belowCounter++;
                 }
-
             }
+            //Перенос середины
+            for (int k=0; k<intCount; k++) {
+
+                if (arrNumber[k]>=0 & arrNumber[k]<=10) {
+                    arrBelowSort[belowCounter] = arrNumber[k];
+                    belowCounter++;
+                }
+            }
+
+            //Перенос в конец больше десяти
+            for (int k=0; k<intCount; k++) {
+
+                if (arrNumber[k]>10) {
+                    arrBelowSort[belowCounter] = arrNumber[k];
+                    belowCounter++;
+                }
+            }
+
             System.out.println("----------");
 
 
             for (int l=0; l<intCount; l++)
-                System.out.print(arrBelowSort[l]);
+                System.out.print(arrBelowSort[l]+" ");
 
 
         }
